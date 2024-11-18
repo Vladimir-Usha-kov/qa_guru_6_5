@@ -7,7 +7,7 @@ from selene.support.conditions import have, be
 @allure.story('Choose form')
 def test_student_registration_form():
     with allure.step('Открытие браузера'):
-        browser.open('/automation-practice-form')
+        browser.open('https://demoqa.com/automation-practice-form')
 
     with allure.step('Заполнение формы'):
         browser.element('#firstName').should(be.blank).type('Vladimir')
