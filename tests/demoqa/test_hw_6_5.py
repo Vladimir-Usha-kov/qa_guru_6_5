@@ -4,7 +4,7 @@ import allure
 from selene import browser
 from selene.support.conditions import have, be
 
-@allure.story('Choose form')
+@allure.title('Choose form')
 def test_student_registration_form():
     with allure.step('Открытие браузера'):
         browser.open('https://demoqa.com/automation-practice-form')
@@ -23,7 +23,7 @@ def test_student_registration_form():
 
         browser.element('#subjectsInput').with_(timeout=4).send_keys('Computer Science').press_tab()
         browser.all('#hobbiesWrapper .custom-control-label').element_by(have.exact_text('Music')).click()
-        browser.element('#uploadPicture').send_keys(os.path.abspath('resources/photo.jpg'))
+        browser.element('#uploadPicture').send_keys(os.path.abspath('../resources/photo.jpg'))
         browser.element('#currentAddress').type('street test 12')
         browser.element('#state').click()
         browser.all('[id^=react-select][id*=option]').element_by(have.exact_text('Haryana')).click()
